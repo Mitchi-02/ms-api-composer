@@ -1,3 +1,43 @@
 server:
   port: 7777
 
+spring:
+  application:
+    name: ms-gateway
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            logger-level: FULL
+    gateway:
+      routes:
+        - id: route1
+          predicates:
+            - Path=/cloud/etablissement/**
+          filters:
+            - RewritePath=/cloud/etablissement/(?<s>.*), /${s}
+          uri: lb://ms-etablissement
+
+        - id: route2
+          predicates:
+            - Path=/cloud/equipe/**
+          filters:
+            - RewritePath=/cloud/equipe/(?<s>.*), /${s}
+          uri: lb://ms-equipe
+
+        - id: route3
+          predicates:
+            - Path=/cloud/join/**
+          filters:
+            - RewritePath=/cloud/join/(?<s>.*), /${s}
+          uri: lb://ms-composer
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+
+

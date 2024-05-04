@@ -10,7 +10,15 @@ import lombok.NoArgsConstructor;
 public class Chercheur {
 
     @Id
-    private Long idChercheur;
+    private Long id;
 
+    private String name;
 
+    private String email;
+
+    @ManyToOne
+    private Equipe equipe;
+
+    @OneToOne
+    private Equipe equipe_chef;
 }

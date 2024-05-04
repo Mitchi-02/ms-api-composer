@@ -12,7 +12,17 @@ public class Laboratoire {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idLabo;
+    private Long id;
 
+    private String name;
 
+    private String speciality;
+
+    @ManyToOne
+    private Etablissement etablissement;
+
+    //many to one to many (or one to one) with chercheur from ms-equipe
+    private long directeurId;
 }
+
+

@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 public class Equipe {
 
     private String nom;
+
     private Long idLabo;
-
-
 }
