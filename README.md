@@ -1,4 +1,4 @@
-# Micro Services API
+# Micro Services with API Composer
 A micro services api that uses the API-COMPOSER pattern for data joins between services, for a school exam.
 ## Getting Started
 ### Clone the Repository
