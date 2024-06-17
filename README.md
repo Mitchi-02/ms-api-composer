@@ -1,5 +1,5 @@
 # Micro Services with API Composer
-A micro services api that uses the API-COMPOSER pattern for data joins between services, for a school exam.
+A micro services api that uses the api composition pattern for data joins between services, for a school exam.
 ## Getting Started
 ### Clone the Repository
   ```bash
